@@ -1,0 +1,477 @@
+/* oxygen-regular - latin */
+@font-face {
+	font-family: 'Oxygen';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('fonts/oxygen-v14-latin-regular.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		 url('fonts/oxygen-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('fonts/oxygen-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('fonts/oxygen-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
+		 url('fonts/oxygen-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('fonts/oxygen-v14-latin-regular.svg#Oxygen') format('svg'); /* Legacy iOS */
+}  
+
+/* nunito-regular - latin */
+@font-face {
+	font-family: 'Nunito';
+	font-style: normal;
+	font-weight: 400;
+	src: url('fonts/nunito-v20-latin-regular.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		 url('fonts/nunito-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('fonts/nunito-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('fonts/nunito-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+		 url('fonts/nunito-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('fonts/nunito-v20-latin-regular.svg#Nunito') format('svg'); /* Legacy iOS */
+}
+
+
+  /* Archivo Black */
+@font-face {
+	font-family: "Archivo Black";
+	src: url("fonts/ArchivoBlack-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bungee Shade";
+	src: url("fonts/BungeeShade-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bowlby One";
+	src: url("fonts/BowlbyOne-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	font-family: "Oxygen", Verdana, sans-serif;
+    margin: 0;
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+body,td,th {
+    font-size: 100%;
+	color: #9a9a9a;
+}
+
+h1 {
+	font-size: 2em;
+	padding-bottom: 3%;
+}
+
+a {
+	color: #3609ff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #ff3366;
+}
+
+i {
+	padding: 3em;
+}
+
+header {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	padding-top: 1%;
+	z-index: 10;
+}
+
+#logo {
+	color: #3609ff;
+	float: left;
+	margin-left: 5%;
+	font-size: 5em;
+	font-family: "Bungee Shade", Verdana, sans-serif;
+	transition: 0.3s;
+	font-weight: normal;
+}
+
+#logo:hover {
+	text-decoration: none;
+	color: #ff3366;
+}
+
+.nav {
+	float: right;
+	margin-right: 10%;
+}
+
+.nav a {
+	font-size: 1.5em;
+	float: left;
+	display: block;
+	color: #3609ff;
+	text-align: center;
+	padding: 1.3em .3em;
+	text-decoration: none;
+	transition: 0.3s;
+	font-family: 'Nunito', Verdana, sans-serif;
+}
+
+.nav a:hover {
+	color: #ff006a;
+	opacity: 1;
+}
+
+.nav .icon {
+	display: none;
+}
+
+.gallery {
+    width: 85%;
+    margin: auto;
+	position: relative;
+}
+
+.grid {
+    width: 100%;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Prevents cropping, shows entire image */
+    cursor: pointer;
+    display: block;
+    box-sizing: border-box;
+	max-width: 100%;
+    max-height: 100%;
+}
+
+.grid-item {
+    width: calc(25% - 10px);
+	height: auto;
+	display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#lightbox {
+	display: none; /* Initially hidden */
+	position: fixed; /* Cover the entire viewport */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	z-index: 9999;
+	justify-content: center; /* Center horizontally */
+	align-items: center; /* Center vertically */
+}
+
+#lightbox .lightbox-content {
+    max-width: 90%;
+    max-height: calc(100vh - 40px); /* Account for lightbox padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	box-sizing: border-box; /* Include padding in width/height */
+}
+
+#lightbox img {
+	max-width: 100%;
+	max-height: calc(100vh - 100px);;
+	display: block; /* Prevents image from affecting layout */
+	object-fit: contain;
+	margin: 0 auto; /* Centers the image in the lightbox */
+}
+
+#lightbox .close,
+#lightbox .prev,
+#lightbox .next {
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+#lightbox .close {
+    top: 1em;
+    right: 1em;
+    font-size: 4em;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+#lightbox .prev,
+#lightbox .next {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 5em;
+}
+
+#lightbox .prev {
+    left: 1em;
+}
+
+#lightbox .next {
+    right: 1em;
+}
+
+#caption {
+    color: #ffffff;
+	font-size: 2em;
+    text-align: center;
+	margin-top: 5px;
+	word-wrap: break-word;
+}
+
+#caption a {
+	color: #ff3366;
+}
+
+
+.image-100 {
+	margin: auto;
+	overflow: visible;
+	text-align: center;
+}
+
+.image-100  img{
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin-bottom: 1em;
+}
+
+div.img-80 img {
+    width: 80%;
+    height: auto;
+	margin: auto;
+	display: block;
+	margin-bottom: 1em;
+}
+
+div.img-55 img {
+    width: 55%;
+    height: auto;
+	margin: auto;
+	display: block;
+	margin-bottom: 1em;
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	margin-bottom: 1em;
+}
+
+.video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.corners {
+	border-top-left-radius:		10px	10px;
+	border-top-right-radius:	10px	10px;
+	border-bottom-left-radius:	10px	10px;
+	border-bottom-right-radius:	10px	10px;
+}
+
+.desc {
+	min-height: 100%;
+	width: 65%;
+	margin: auto;
+	font-size: 145%;
+	line-height: 160%;
+	padding: 5%;
+	text-align: center;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.clear {
+	clear: both;
+}
+
+#footer {
+	width: 65%;
+	display: block;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 0;
+	padding-top: 2.5%;
+	padding-bottom: 1%;
+}
+
+.footer-nav a {
+	padding: none;
+	display: block;
+	color: #3609ff;
+	text-align: center;
+	text-decoration: none;
+	transition: 0.3s;
+	font-family: 'Nunito', Verdana, sans-serif;
+}
+
+.footer-nav a:hover {
+	color: #ff006a;
+	opacity: 1;
+}
+
+.footer-nav .icon {
+	display: none;
+}
+
+@media not all and (display-mode: fullscreen) { /* Target browsers that don't fully support grid */
+    .grid {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 1600px){
+	#logo { 
+		font-size: 4.5em;
+}
+	.grid-item {
+		width: calc(33.33% - 10px);
+}
+}
+
+@media only screen and (max-width: 1281px){
+	#logo { 
+		font-size: 4em;
+}
+	.nav {
+		margin-right: 8%;
+}
+	i {
+		padding: 2.2em;
+}
+	.grid-item {
+		width: calc(50% - 10px);
+}
+	#lightbox .close {
+		top: 0.8em;
+		right: 0.8em;
+		font-size: 2em;
+		width: 1.2em;
+		height: 1.2em;
+}
+	#lightbox .prev,
+	#lightbox .next {
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 3em;
+		width: 1.2em;
+		height: 1.2em;
+}
+	#lightbox .prev {
+		left: 0.5em;
+}
+	#lightbox .next {
+		right: 0.5em;
+}
+}
+
+@media only screen and (max-width: 961px){
+	#logo { 
+		font-size: 3.2em;
+		margin-left: 8%;
+}
+	i {
+		padding: 1.5em;
+}
+	#lightbox .close {
+		font-size: 2em;
+		width: 1.2em;
+		height: 1.2em;
+}
+	#lightbox .prev,
+	#lightbox .next {
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 2em;
+		width: 1.2em;
+		height: 1.2em;
+}
+	#lightbox .prev {
+		left: 0.5em;
+}
+	#lightbox .next {
+		right: 0.5em;
+}
+	#caption {
+	font-size: 1.3em;
+}
+	#about {
+		font-size: 180%;
+}
+	#footer {
+		width: 100%;
+}
+	.desc {
+		font-size: 150%;
+}
+}
+
+@media only screen and (max-width: 641px){
+	h1 {
+		line-height: 1.3em;
+	}
+	.desc {
+		font-size: 130%;
+}
+}
+
+@media only screen and (max-width: 500px){
+	h1 {
+		font-size: 1.2em;
+	}
+	i {
+		padding: 1em;
+}
+	#logo { 
+		font-size: 2.8em;
+		margin-left: 6%;
+}
+	.grid-item {
+    	width: 100%;
+}
+.video-container {
+	padding-bottom: 75%;
+}
+	.nav {
+		font-size: 1em;
+		margin-right: 0;
+}
+	.desc {
+		font-size: 105%;
+		width: 95%;
+}
+}

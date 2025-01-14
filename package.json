@@ -1,0 +1,11 @@
+{
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "imagesloaded": "^5.0.0",
+    "masonry-layout": "^4.2.2"
+  },
+  "devDependencies": {
+    "sass": "^1.83.1"
+  }
+}
