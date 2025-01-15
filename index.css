@@ -301,14 +301,20 @@ div.img-55 img {
 }
 
 .desc {
-	min-height: 100%;
 	width: 65%;
 	margin: auto;
 	font-size: 145%;
 	line-height: 160%;
-	padding: 5%;
 	text-align: center;
+	box-sizing: border-box;
 }
+
+.desc img { /* Style the image directly */
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto; /* Center the image */
+  }
 
 .center {
 	margin: 0 auto;
@@ -468,10 +474,11 @@ div.img-55 img {
 }
 	.nav {
 		font-size: 1em;
-		margin-right: 0;
+		margin-right: 2em;
 }
 	.desc {
 		font-size: 105%;
 		width: 95%;
+		padding: 0;
 }
 }
