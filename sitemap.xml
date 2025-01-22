@@ -1,0 +1,28 @@
+  GNU nano 8.3                sitemap.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ithellmoore.com/</loc>
+  </url>
+  <url>
+    <loc>https://ithellmoore.com/about/</loc>
+  </url>
+    <url>
+    <loc>https://ithellmoore.com/giraffe/</loc>
+  </url>
+  <url>
+    <loc>https://ithellmoore.com/self-portrait/</loc>
+  </url>
+  <url>
+    <loc>https://ithellmoore.com/gibson/</loc>
+  </url>
+    <url>
+    <loc>https://ithellmoore.com/short/</loc>
+  </url>
+  <url>
+    <loc>https://ithellmoore.com/giraffe_privacy-policy/</loc>
+  </url>
+  <url>
+    <loc>https://ithellmoore.com/privacy-policy/</loc>
+  </url>
+</urlset>
