@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ithellmoore.com/sitemap.xml
