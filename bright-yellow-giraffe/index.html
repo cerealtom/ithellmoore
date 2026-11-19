@@ -3,11 +3,40 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | The Bright Yellow Giraffe</title>
+    <title>The Bright Yellow Giraffe</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+
+    <style>
+      #rotate-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #1a1a1a;
+        color: #ffffff;
+        z-index: 9999;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: sans-serif;
+        padding: 20px;
+      }
+
+      /* Show overlay only on touch/mobile screens held in portrait */
+      @media screen and (max-width: 900px) and (orientation: portrait) {
+        #rotate-overlay {
+          display: flex;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="rotate-overlay">
+      <div style="font-size: 48px; margin-bottom: 16px;">📱↻</div>
+      <h2>Please rotate your device</h2>
+      <p>Book is designed to be read in landscape mode</p>
+    </div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
