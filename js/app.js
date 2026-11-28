@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gridItems = grid.querySelectorAll('.grid-item'); // Select grid items
     if (gridItems.length === 0) return console.warn("No grid items found");
 
-    const images = grid.querySelectorAll('.grid-item img'); // Select images inside grid items
+    const images = grid.querySelectorAll('.grid-item:not(.grid-item--link) img'); // Select images inside grid items, excluding links
     if (images.length === 0) return console.warn("No images found");
 
     const lightbox = document.getElementById('lightbox');
@@ -28,18 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
         let imagesLoadedCount = 0;
         images.forEach(img => {
             if (img.complete) {
-              imagesLoadedCount++
-              if (imagesLoadedCount === images.length) {
+                imagesLoadedCount++
+                if (imagesLoadedCount === images.length) {
                 msnry.layout()
-              }
+                }
             } else {
-              img.addEventListener('load', () => {
+            img.addEventListener('load', () => {
                 imagesLoadedCount++
                 msnry.layout()
                 if(imagesLoadedCount === images.length) {
-                  msnry.layout()
+                msnry.layout()
                 }
-              });
+            });
             }
         });
 
